@@ -20,6 +20,13 @@ function MainContent() {
         </main>
     )
 }
+function Footer() {
+    return (
+        <footer>
+            <p>Tous droits réservés - MELLOULI Mohamed Amine</p>
+        </footer>
+    )
+}
 
 function App() {
     const [count, setCount] = useState(0)
@@ -49,6 +56,7 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <Footer />
     </>
   )
 }
