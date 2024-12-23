@@ -28,11 +28,9 @@ function MainContent() {
     )
 }
 function Footer() {
-    const date = new Date();
-    const year = date.getFullYear();
     return (
         <footer>
-            <p>© {year} - MELLOULI Mohamed Amine, Tous droits réservés.</p>
+            <p>Tous droits réservés - MELLOULI Mohamed Amine</p>
         </footer>
     )
 }
