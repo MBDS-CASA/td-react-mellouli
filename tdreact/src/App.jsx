@@ -3,12 +3,24 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+function Header() {
+    let name = "React"
+    return (
+        <header>
+            <img src="https://emsi.ma/wp-content/uploads/2020/07/logo.png"  title="logo" alt="logoemsi"/>
+            <h1>Introduction à {name}</h1>
+            <h2>A la découverte des premières notions de React</h2>
+        </header>
+    )
+}
 
-  return (
-    <>
-      <div>
+function App() {
+    const [count, setCount] = useState(0)
+
+    return (
+        <>
+            <div>
+                <Header />
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
