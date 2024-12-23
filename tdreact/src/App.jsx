@@ -53,6 +53,13 @@ function getRandomItem(data) {
     const randomIndex = Math.floor(Math.random() * data.length);
     return data[randomIndex];
 }
+const MenuItem = ({ item }) => {
+    return (
+        <li key={item.id} onClick={() => alert(item.alertText)}>
+            {item.text}
+        </li>
+    );
+};
 function App() {
     const [count, setCount] = useState(0)
     const randomItem = getRandomItem(data);
@@ -62,17 +69,13 @@ function App() {
         { id: 3, text: 'Note', alertText: randomItem.grade },
         { id: 4, text: 'Date', alertText: randomItem.date },
     ];
-    const handleClick = (text) => {
-        alert(text);
-    };
+    
     return (
         <div>
             <nav>
                 <ul>
                     {menuItems.map((item) => (
-                        <li key={item.id} onClick={() => handleClick(item.alertText)}>
-                            {item.text}
-                        </li>
+                        <MenuItem item={item} key={item.id} />
                     ))}
                 </ul>
             </nav>

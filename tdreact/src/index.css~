@@ -154,7 +154,7 @@ nav {
   left: 0;
   width: 100%;
   box-sizing: border-box;
-  background-color: #a18aba;
+  background-color: #0b31ae;
   padding: 10px;
   border-bottom: 1px solid #ccc;
   text-align: left;
