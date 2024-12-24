@@ -5,7 +5,7 @@ const Notes = () => {
     return (
         <div>
             <h1>Notes des étudiants</h1>
-            <table border="1" align={"center"}>
+            <table border="1">
                 <thead>
                 <tr>
                     <th>ID</th>
