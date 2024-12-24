@@ -3,42 +3,12 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import data from './assets/data.json';
-
-function Header(props) {
-    // let name = "React"
-    return (
-        <header>
-            <img src="https://emsi.ma/wp-content/uploads/2020/07/logo.png"  title="logo" alt="logoemsi"/>
-            <h1>Introduction à {props.name}</h1>
-            <h2>A la découverte des premières notions de React</h2>
-        </header>
-    )
-}
-function MainContent() {
-    const date = new Date();
-    const day = date.getDate();
-    const month = date.toLocaleString('default', { month: 'long' });
-    const year = date.getFullYear();
-    const hours = date.getHours();
-    const minutes = date.getMinutes();
-    const seconds = date.getSeconds();
-    return (
-        <main>
-            <p>Bonjour, on est le {day} {month} {year} et il est {hours}:{minutes}:{seconds}</p>
-        </main>
-    )
-}
+import MainContent from './components/MainContent';
+import Header from './components/Header';
+import Footer from "./components/Footer.jsx";
+import Menu from "./components/Menu.jsx";
 
 
-function Footer() {
-    const date = new Date();
-    const year = date.getFullYear();
-    return (
-        <footer>
-            <p>© {year} - MELLOULI Mohamed Amine, Tous droits réservés.</p>
-        </footer>
-    )
-}
 function DisplayItem({ item }) {
     return (
         <div>
@@ -63,22 +33,11 @@ const MenuItem = ({ item }) => {
 function App() {
     const [count, setCount] = useState(0)
     const randomItem = getRandomItem(data);
-    const menuItems = [
-        { id: 1, text: randomItem.student.lastname, alertText: randomItem.student.firstname },
-        { id: 2, text: 'Matières', alertText: randomItem.course},
-        { id: 3, text: 'Note', alertText: randomItem.grade },
-        { id: 4, text: 'Date', alertText: randomItem.date },
-    ];
-    
+
     return (
-        <div>
-            <nav>
-                <ul>
-                    {menuItems.map((item) => (
-                        <MenuItem item={item} key={item.id} />
-                    ))}
-                </ul>
-            </nav>
+
+        <>
+            <Menu />
             <div>
                 <Header name="React" />
                 <a href="https://vite.dev" target="_blank">
@@ -103,7 +62,7 @@ function App() {
                 Click on the Vite and React logos to learn more
             </p>
             <Footer />
-        </div>
+        </>
     );
 }
 
